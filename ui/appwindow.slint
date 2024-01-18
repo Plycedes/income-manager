@@ -1,0 +1,32 @@
+import { Button, VerticalBox, LineEdit } from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    background: @linear-gradient(90deg, #0084bd 0%,  #a70099 100%);
+    GridLayout {
+        padding: 50px;
+        spacing: 20px;
+        Row {            
+            Text {
+                text: "Income Manager";
+                horizontal-alignment: center;
+                font-size: 30px;
+                font-weight: 1100;
+            }
+        }    
+
+        Row {
+            LineEdit {
+                font-size: 20px;
+                horizontal-alignment: center;
+                placeholder-text: "Enter your income";
+            }
+        }
+
+        Row {
+            Button {
+                text: "Evaluate";
+                primary: true;
+            }
+        }
+    }
+}
