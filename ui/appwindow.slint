@@ -1,6 +1,10 @@
 import { Button, VerticalBox, LineEdit } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
+
+    property<string> result: "Test";
+    callback divide-income(string);
+
     background: @linear-gradient(90deg, #0084bd 0%,  #a70099 100%);
     GridLayout {
         padding: 50px;
@@ -15,10 +19,11 @@ export component AppWindow inherits Window {
         }    
 
         Row {
-            LineEdit {
+            income := LineEdit {
                 font-size: 20px;
                 horizontal-alignment: center;
                 placeholder-text: "Enter your income";
+                height: 35px;
             }
         }
 
@@ -26,6 +31,27 @@ export component AppWindow inherits Window {
             Button {
                 text: "Evaluate";
                 primary: true;
+                height: 35px;
+                clicked => {divide-income(income.text)}                               
+            }
+        }
+
+        Row{
+            VerticalBox {
+                Rectangle {
+                    background: #ffffff30;
+                    height: 100px;
+                    border-color: #ffffff34;
+                    border-radius: 5px;
+                    border-width: 0.7px;
+
+                    Text{
+                        color: #dfdfdf;
+                        font-size: 16px;
+                        font-weight: 500;
+                        text: root.result;
+                    }
+                }
             }
         }
     }
