@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Plycedes <abhaypratapyadav340@gmail.com>"]
 edition = "2021"
 build = "build.rs"
+description = "An income dividing application"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,3 +13,9 @@ slint = "1.0"
 
 [build-dependencies]
 slint-build = "1.0"
+
+[package.metadata.bundle]
+name = "Income"
+identifier = "io.github.plycedes.income-manager"
+description = "Diving up income into tax, owner, profit, and opex amounts."
+icon = ["./icon.png", "./icon@2x.png"]
