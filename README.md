@@ -22,3 +22,8 @@ Users simply need to put in their income and the application will divide that in
 4. Run the application binary
      ```
      cargo run
+     ```
+5. Install cargo bundle to build a distibutable build for different platforms
+   ```
+   cargo install cargo-bundle
+   ```
